@@ -1,0 +1,28 @@
+---
+title: "methylation_pt3"
+author: "Milo Gittings"
+date: "2026-03-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = normalizePath("/home1/gittings/490_cluster/analysis_data"))
+```
+
+Three genes of interest: MMP14, ZFHX4, NCMAP
+
+MMP14: The UCSC Genome Browser visualization of MMP14 shows that the gene is located on chromosome 14 and contains multiple exons and introns visible in the GENCODE and MANE tracks. A CpG island is visible at the promoter region of MMP14, which is significant because methylation of CpG islands near promoters is commonly associated with gene silencing. This CpG island at the promoter supports my earlier finding that MMP14 may be hypermethylated in metastatic breast cancer patients, potentially contributing to changes in its expression.
+
+
+ZFHX4:The UCSC Genome Browser visualization of ZFHX4 shows that the gene is located on chromosome 8 (8q21.13) and spans a very large genomic region of approximately 180 kb with 12 exons visible across the GENCODE and MANE tracks. One or more CpG islands are present near the 5' promoter region, and EPDnew promoter marks are visible at the transcription start site. The UniProt track shows multiple annotated zinc finger and homeodomain regions distributed across the length of the protein, consistent with ZFHX4's identity as a large transcription factor rather than a membrane-bound protein, and these domain annotations are less spatially concentrated than those seen for MMP14. In the TCGA BRCA analysis, ZFHX4 appeared among genes that are hypermethylated in metastatic patients, suggesting that CpG island methylation near the promoter may be epigenetically silencing this transcription factor in the metastatic context. We cannot conclude, however, whether loss of ZFHX4 expression actively contributes to metastatic progression or is simply a passenger epigenetic event, as the functional role of ZFHX4 in breast cancer specifically remains unclear from this visualization alone.
+
+
+SYNDIG1: The UCSC Genome Browser visualization of SYNDIG1 shows that the gene is located on chromosome 4 and spans multiple exons visible across the GENCODE and MANE tracks, with CpG islands present near the promoter region and EPDnew promoter marks visible at the transcription start site. The UniProt track shows limited protein domain annotations, consistent with SYNDIG1 being a transmembrane protein involved in synapse development rather than a large multi-domain enzyme. In the TCGA BRCA analysis, SYNDIG1 appeared among genes that are hypermethylated in metastatic patients, and the bar plot of average beta values across approximately 22 CpG sites confirms that metastatic patients show consistently higher methylation than non-metastatic patients at most sites; however, the expression boxplot shows that SYNDIG1 transcript counts are modestly higher in metastatic patients rather than lower, which is interesting given that promoter hypermethylation typically silences gene expression. This discordance between methylation and expression suggests that the hypermethylated CpG sites measured may fall outside the core promoter region and thus do not functionally repress transcription, or that other regulatory mechanisms are overriding the methylation signal in metastatic BRCA patients — we therefore cannot conclude that hypermethylation is driving transcriptional changes for SYNDIG1 in this context.
+
+Article: A two gene epigenetic signature for the prediction of response to neoadjuvant chemotherapy in triple-negative breast cancer patients. 
+  Pineda B. et al., 2019
+
+This study on triple-negative breast cancer found that ZFHX4 was identified as a differentially methylated gene between chemotherapy responders and non-responders, establishing a direct link between ZFHX4 methylation status and breast cancer clinical outcomes. This study on triple-negative breast cancer found that ZFHX4 was identified as a differentially methylated gene between chemotherapy responders and non-responders, establishing a direct link between ZFHX4 methylation status and breast cancer clinical outcomes. However, the direction of methylation change differs: this study found decreased ZFHX4 methylation in non-responder patients with worse outcomes, whereas my analysis identified hypermethylation of ZFHX4 in metastatic patients. This discrepancy may reflect the fact that the two studies are comparing fundamentally different patient groupings — chemotherapy response versus metastatic status — and that ZFHX4 methylation patterns may be context-dependent rather than uniformly directional across all breast cancer subtypes.
+
+
+
